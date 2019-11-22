@@ -172,6 +172,13 @@
     <Compile Include="Externo.Master.designer.cs">
       <DependentUpon>Externo.Master</DependentUpon>
     </Compile>
+    <Compile Include="frmPerfil.aspx.cs">
+      <DependentUpon>frmPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmPerfil.aspx.designer.cs">
+      <DependentUpon>frmPerfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1822,6 +1829,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="frmPerfil.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Login.aspx" />

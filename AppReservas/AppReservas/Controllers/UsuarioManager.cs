@@ -40,5 +40,28 @@ namespace AppReservas.Controllers
 
             return JsonConvert.DeserializeObject<Usuario>(await response.Content.ReadAsStringAsync());
         }
+
+
+        //ACTUALIZA
+        public async Task<Usuario> Actualizar(Usuario usuario,string token)
+        {
+            string URL = "http://localhost:49220/api/Usuario/";
+            HttpClient client = GetClient(token);
+            var response = await client.PutAsync(URL,
+                new StringContent(JsonConvert.SerializeObject(usuario),
+                Encoding.UTF8, "application/json"));
+
+            return JsonConvert.DeserializeObject<Usuario>(await response.Content.ReadAsStringAsync());
+        }
+
+        //TOKEN DEL CLIENTE PARA SABER SI ESTA ACTIVO
+        HttpClient GetClient(string token)
+        {
+            HttpClient cliente = new HttpClient();
+            cliente.DefaultRequestHeaders.Add("Authorization", token);
+            cliente.DefaultRequestHeaders.Add("Accept", "application/json");
+
+            return cliente;
+        }
     }
 }

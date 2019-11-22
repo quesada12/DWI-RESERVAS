@@ -11,8 +11,6 @@
   
 
 
-
-
     <asp:GridView ID="grdHoteles" runat="server" BackColor="White" CssClass="table table-bordered" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
         <AlternatingRowStyle BackColor="#CCCCCC" />
         <FooterStyle BackColor="#CCCCCC" />
