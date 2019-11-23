@@ -49,32 +49,7 @@ namespace AppReservas
             grdHoteles.DataBind();
         }
 
-        async protected void btnIngresar_Click(object sender, EventArgs e)
-        {
-            Models.Hotel hotel = new Models.Hotel()
-            {
-                HOT_NOMBRE = txtNombre.Text,
-                HOT_DIRECCION = txtDireccion.Text,
-                HOT_EMAIL = txtEmail.Text
-            };
-
-            Models.Hotel hotelIngresado = await hotelManager.Ingresar(hotel, VG.usuarioActual.CadenaToken);
-
-            if (!String.IsNullOrEmpty(hotelIngresado.HOT_NOMBRE))
-            {
-                lblResultado.Text ="Hotel Ingresado exitosamente";
-                lblResultado.ForeColor = Color.Green;
-                lblResultado.Visible = true;
-                InicializarControles();
-       
-            }
-            else
-            {
-                lblResultado.Text = "Error al ingresar el hotel";
-                lblResultado.ForeColor = Color.Red;
-                lblResultado.Visible = true;
-            }
-        }
+        
 
         async protected void btnModificar_Click(object sender, EventArgs e)
         {

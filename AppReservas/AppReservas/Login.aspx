@@ -13,6 +13,14 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+.boton{
+            width:130px;
+            height: 60px;
+            padding: 6px !important;
+            margin: 10px;
+            text-align:center;
+        }
+
 .button {
     background-color: #243054;
     color: white;
@@ -82,9 +90,9 @@ span.psw {
       <br />
     <asp:TextBox Placeholder="Ingrese su password" runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
     <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="El campo de password es obligatorio." />
-    <asp:Button type="button" CssClass="btn btn-primary btn-user btn-block" ID="btnLogin" OnClick="btnIngresar_Click"  runat="server" Text="Ingresar"/> 
+    <asp:Button type="button" CssClass="btn btn-primary btn-user btn-block boton" ID="btnLogin" OnClick="btnIngresar_Click"  runat="server" Text="Ingresar"/> 
    <hr>
-      <asp:Button type="button" CssClass="btn btn-google btn-user btn-block" ID="btnCancelar"  runat="server" Text="Cancelar" />
+      <asp:Button type="button" CssClass="btn btn-google btn-user btn-block boton" ID="btnCancelar"  runat="server" Text="Cancelar" />
 
       <asp:PlaceHolder runat="server" ID="ErrorMessage"  Visible="false">
                         <p class="text-danger">
@@ -93,7 +101,7 @@ span.psw {
                     </asp:PlaceHolder>
      <br><br>
     
-      <a href="Register.aspx" class="btn btn-facebook btn-user btn-block">
+      <a href="Register.aspx" class="btn btn-facebook btn-user btn-block  ">
                        Registrarme
                     </a>
   </div>

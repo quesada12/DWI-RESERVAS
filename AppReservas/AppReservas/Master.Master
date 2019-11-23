@@ -69,7 +69,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Acciones:</h6>
               <a class="collapse-item" href="frmHotel.aspx">Actualizar</a>
-            <a class="collapse-item" href="#">Crear</a>
+            <a class="collapse-item" href="nuevoHotel.aspx">Crear</a>
             
           </div>
         </div>
@@ -85,7 +85,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Acciones:</h6>
               <a class="collapse-item" href="#">Actualizar</a>
-            <a class="collapse-item" href="#">Crear</a>
+            <a class="collapse-item" href="nuevaHabitacion.aspx">Crear</a>
             
           </div>
         </div>
@@ -100,7 +100,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Acciones:</h6>
               <a class="collapse-item" href="#">Actualizar</a>
-            <a class="collapse-item" href="#">Crear</a>
+            <a class="collapse-item" href="nuevaReserva.aspx">Crear</a>
 
             
           </div>

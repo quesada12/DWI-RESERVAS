@@ -45,6 +45,7 @@ namespace AppReservas
             txtIdentificacion.Text = VG.usuarioActual.USU_IDENTIFICACION;
             txtNombre.Text = VG.usuarioActual.USU_NOMBRE;
             txtEmail.Text = VG.usuarioActual.USU_EMAIL;
+            lblResultado.Visible = false;
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -54,18 +55,53 @@ namespace AppReservas
 
         async protected  void btnActualizar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario()
+            if (validarPassword())
             {
-                USU_CODIGO = VG.usuarioActual.USU_CODIGO,
-                USU_NOMBRE = txtNombre.Text,
-                USU_EMAIL = txtEmail.Text,
-                USU_PASSWORD = txtContra.Text
-            };
+                Usuario usuario = new Usuario()
+                {
+                    USU_CODIGO = VG.usuarioActual.USU_CODIGO,
+                    USU_NOMBRE = txtNombre.Text,
+                    USU_EMAIL = txtEmail.Text,
+                    USU_PASSWORD = txtContra.Text
+                };
 
 
-            Usuario usuarioModificado = await usuarioManager.Actualizar(usuario, VG.usuarioActual.CadenaToken);
+                Usuario usuarioModificado = await usuarioManager.Actualizar(usuario, VG.usuarioActual.CadenaToken);
 
-           
+                if (!String.IsNullOrEmpty(usuarioModificado.USU_NOMBRE))
+                {
+                    lblResultado.Text = "Usuario Modificado exitosamente";
+                    lblResultado.ForeColor = Color.Green;
+                    lblResultado.Visible = true;
+
+                }
+                else
+                {
+                    lblResultado.Text = "Error al modificar el Usuario";
+                    lblResultado.ForeColor = Color.Red;
+                    lblResultado.Visible = true;
+                }
+            }
+            else
+            {
+                lblResultado.Visible = true;
+                lblResultado.Text = "Contraseñas no coinciden";
+                lblResultado.ForeColor = Color.Red;
+            }
+            
+        }
+
+        public bool validarPassword()
+        {
+            if (txtContra.Text.Equals(txtConfirmar.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
     }
 }

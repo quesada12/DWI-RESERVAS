@@ -58,7 +58,6 @@
         <tr>
             <td class="auto-style1">
                 <br />
-                <asp:Button ID="btnIngresar" runat="server" OnClick="btnIngresar_Click" Text="Ingresar" CssClass="btn btn-success btn-user btn-icon-split" Height="42px" Width="110px" />
             </td>
             <td>
                  <br />

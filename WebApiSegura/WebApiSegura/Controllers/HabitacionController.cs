@@ -140,7 +140,7 @@ namespace WebApiSegura.Controllers
                     sqlCommand.Parameters.AddWithValue("@HAB_TIPO", habitacion.HAB_TIPO);
                     sqlCommand.Parameters.AddWithValue("@HAB_PRECIO", habitacion.HAB_PRECIO);
                     sqlCommand.Parameters.AddWithValue("@HAB_ESTADO", habitacion.HAB_ESTADO);
-                    sqlCommand.Parameters.AddWithValue("@HOT_CODIGO", habitacion.HAB_CODIGO);
+                    sqlCommand.Parameters.AddWithValue("@HOT_CODIGO", habitacion.HOT_CODIGO);
 
                     connection.Open();
 

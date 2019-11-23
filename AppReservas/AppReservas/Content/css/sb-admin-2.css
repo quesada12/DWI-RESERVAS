@@ -69,6 +69,12 @@ body {
   background-color: #fff;
 }
 
+.boton {
+    padding: 6px !important;
+    margin: 10px;
+    text-align: center;
+}
+
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
