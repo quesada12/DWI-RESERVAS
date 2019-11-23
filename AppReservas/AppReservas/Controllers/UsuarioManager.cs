@@ -43,10 +43,10 @@ namespace AppReservas.Controllers
 
 
         //ACTUALIZA
-        public async Task<Usuario> Actualizar(Usuario usuario,string token)
+        public async Task<Usuario> Actualizar(Usuario usuario)
         {
             string URL = "http://localhost:49220/api/Usuario/";
-            HttpClient client = GetClient(token);
+            HttpClient client = new HttpClient();
             var response = await client.PutAsync(URL,
                 new StringContent(JsonConvert.SerializeObject(usuario),
                 Encoding.UTF8, "application/json"));

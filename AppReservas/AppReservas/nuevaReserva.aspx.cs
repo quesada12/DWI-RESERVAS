@@ -41,7 +41,7 @@ namespace AppReservas
                     CargarHoteles();
                     CargarHabitaciones();
                 }
-
+                lblResultado.Visible = false;
             }
 
         }

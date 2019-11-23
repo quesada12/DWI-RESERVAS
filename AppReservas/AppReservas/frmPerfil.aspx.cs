@@ -30,7 +30,7 @@ namespace AppReservas
         {
             if (!VG.usuarioActual.EstadoSesion.Equals("A") || (DateTime.Now > VG.usuarioActual.Token.ValidTo))
             {
-                Response.Redirect("~Login.aspx");
+                Response.Redirect("Login.aspx");
             }
             else
             {
@@ -45,7 +45,7 @@ namespace AppReservas
             txtIdentificacion.Text = VG.usuarioActual.USU_IDENTIFICACION;
             txtNombre.Text = VG.usuarioActual.USU_NOMBRE;
             txtEmail.Text = VG.usuarioActual.USU_EMAIL;
-            lblResultado.Visible = false;
+           // lblResultado.Visible = false;
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace AppReservas
             Response.Redirect("Default.aspx");
         }
 
-        async protected  void btnActualizar_Click(object sender, EventArgs e)
+        async protected void btnActualizar_Click(object sender, EventArgs e)
         {
             if (validarPassword())
             {
@@ -62,17 +62,22 @@ namespace AppReservas
                     USU_CODIGO = VG.usuarioActual.USU_CODIGO,
                     USU_NOMBRE = txtNombre.Text,
                     USU_EMAIL = txtEmail.Text,
-                    USU_PASSWORD = txtContra.Text
+                    USU_PASSWORD = txtContra.Text,
+                    USU_ESTADO = VG.usuarioActual.USU_ESTADO,
+                    USU_FEC_NAC = VG.usuarioActual.USU_FEC_NAC,
+                    USU_IDENTIFICACION = VG.usuarioActual.USU_IDENTIFICACION
+                    
                 };
 
 
-                Usuario usuarioModificado = await usuarioManager.Actualizar(usuario, VG.usuarioActual.CadenaToken);
+                Usuario usuarioModificado = await usuarioManager.Actualizar(usuario);
 
                 if (!String.IsNullOrEmpty(usuarioModificado.USU_NOMBRE))
                 {
                     lblResultado.Text = "Usuario Modificado exitosamente";
                     lblResultado.ForeColor = Color.Green;
                     lblResultado.Visible = true;
+                   // InicializarControles();
 
                 }
                 else

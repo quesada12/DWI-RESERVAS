@@ -21,7 +21,8 @@ namespace AppReservas
             UsuarioManager usuarioManager = new UsuarioManager();
             Usuario usuario = await usuarioManager.Validar(Identificacion.Text, Password.Text);
             JwtSecurityToken securityToken;
-            if(!string.IsNullOrEmpty(usuario.CadenaToken))
+            //if(!string.IsNullOrEmpty(usuario.CadenaToken))
+            if(usuario != null)
             {
                 var jwtHandler = new JwtSecurityTokenHandler();
                 securityToken = jwtHandler.ReadJwtToken(usuario.CadenaToken);

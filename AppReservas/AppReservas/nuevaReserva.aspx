@@ -15,6 +15,7 @@
             margin: 10px;
             text-align:center;
         }
+          
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -23,13 +24,17 @@
         <tr>
             <td class="auto-style1">Fecha Ingreso:</td> 
             <td colspan="2">
-                <asp:Calendar ID="txtCalendarioIngreso" runat="server" Height="142px" Width="231px"></asp:Calendar>
+                <asp:Calendar ID="txtCalendarioIngreso"  runat="server" Width="271px">
+                    
+                </asp:Calendar>
                </td>
         </tr>
         <tr>
             <td class="auto-style1">Fecha Salida:</td> 
             <td colspan="2">
-                <asp:Calendar ID="txtCalendarioSalida" runat="server" Height="142px" Width="271px"></asp:Calendar>
+                <asp:Calendar ID="txtCalendarioSalida" runat="server" Height="142px" CssClass="myCalendar" Width="271px">
+                    
+                </asp:Calendar>
                </td>
         </tr>
  
