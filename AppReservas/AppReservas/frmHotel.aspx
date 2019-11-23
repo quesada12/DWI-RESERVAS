@@ -11,8 +11,11 @@
   
 
 
-    <asp:GridView ID="grdHoteles" runat="server" BackColor="White" CssClass="table table-bordered" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+    <asp:GridView ID="grdHoteles" runat="server" BackColor="White" CssClass="table table-bordered" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnRowCommand="grdHoteles_RowCommand">
         <AlternatingRowStyle BackColor="#CCCCCC" />
+        <Columns>
+            <asp:ButtonField ControlStyle-ForeColor="Blue" Text="Editar/Eliminar" />
+        </Columns>
         <FooterStyle BackColor="#CCCCCC" />
         <HeaderStyle BackColor="#0067C6" Font-Bold="True" ForeColor="White" />
         <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
@@ -29,7 +32,7 @@
         <tr>
             <td class="auto-style1">Codigo</td>
             <td>
-                <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-control form-control-user" Width="386px"></asp:TextBox>
+                <asp:TextBox ID="txtCodigo" runat="server" CssClass="form-control form-control-user" Width="386px" ReadOnly="True"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>

@@ -237,7 +237,7 @@ namespace WebApiSegura.Controllers
                                         " HAB_TIPO = @HAB_TIPO, " +
                                         " HAB_PRECIO = @HAB_PRECIO, " +
                                         " HAB_ESTADO = @HAB_ESTADO, " +
-                                        " HOT_CODIGO = @HOT_CODIGO, " +
+                                        " HOT_CODIGO = @HOT_CODIGO " +
                                         " WHERE HAB_CODIGO = @HAB_CODIGO ", connection);
 
                     command.Parameters.AddWithValue("@HAB_CODIGO", habitacion.HAB_CODIGO); 

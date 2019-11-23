@@ -84,7 +84,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Acciones:</h6>
-              <a class="collapse-item" href="#">Actualizar</a>
+              <a class="collapse-item" href="frmHabitacion.aspx">Actualizar</a>
             <a class="collapse-item" href="nuevaHabitacion.aspx">Crear</a>
             
           </div>
@@ -99,7 +99,7 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Acciones:</h6>
-              <a class="collapse-item" href="#">Actualizar</a>
+              <a class="collapse-item" href="frmReserva.aspx">Actualizar</a>
             <a class="collapse-item" href="nuevaReserva.aspx">Crear</a>
 
             

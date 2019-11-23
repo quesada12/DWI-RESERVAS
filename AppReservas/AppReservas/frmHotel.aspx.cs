@@ -30,7 +30,6 @@ namespace AppReservas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             if (!VG.usuarioActual.EstadoSesion.Equals("A") || (DateTime.Now > VG.usuarioActual.Token.ValidTo))
             {
                 Response.Redirect("~Login.aspx");
@@ -39,7 +38,6 @@ namespace AppReservas
             {
                 InicializarControles();
             }
-            
         }
 
         async void InicializarControles()
@@ -49,7 +47,6 @@ namespace AppReservas
             grdHoteles.DataBind();
         }
 
-        
 
         async protected void btnModificar_Click(object sender, EventArgs e)
         {
@@ -75,7 +72,7 @@ namespace AppReservas
             }
             else
             {
-                lblResultado.Text = "Error al ingresar el hotel";
+                lblResultado.Text = "Error al modificar el hotel";
                 lblResultado.ForeColor = Color.Red;
                 lblResultado.Visible = true;
             }
@@ -99,10 +96,19 @@ namespace AppReservas
             }
             else
             {
-                lblResultado.Text = "Error al ingresar el hotel";
+                lblResultado.Text = "Error al eliminar el hotel";
                 lblResultado.ForeColor = Color.Red;
                 lblResultado.Visible = true;
             }
+        }
+
+        protected void grdHoteles_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            txtCodigo.Text = grdHoteles.Rows[index].Cells[1].Text;
+            txtNombre.Text = grdHoteles.Rows[index].Cells[2].Text;
+            txtEmail.Text = grdHoteles.Rows[index].Cells[3].Text;
+            txtDireccion.Text = grdHoteles.Rows[index].Cells[4].Text;
         }
     }
 }

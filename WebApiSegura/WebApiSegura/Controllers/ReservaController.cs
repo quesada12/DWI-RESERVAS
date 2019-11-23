@@ -132,8 +132,8 @@ namespace WebApiSegura.Controllers
                        System.Configuration.ConfigurationManager.ConnectionStrings["RESERVAS"].ConnectionString))
                 {
                     SqlCommand sqlCommand = new SqlCommand("INSERT INTO RESERVA(RES_FECHA, " +
-                        "RES_FECHA_INGRESO, RES_FECHA_SALIDA, RES_ESTADO, USU_CODIGO, HAB_CODIGO ) VALUES  " +
-                        "(@RES_FECHA, @RES_FECHA_INGRESO, @RES_FECHA_SALIDA, @RES_ESTADO, @USU_CODIGO, @HAB_CODIGO) ",
+                        "RES_FECHA_INGRESO, RES_FECHA_SALIDA, RES_ESTADO, USU_CODIGO, HAB_CODIGO, RES_TOTAL) VALUES  " +
+                        "(@RES_FECHA, @RES_FECHA_INGRESO, @RES_FECHA_SALIDA, @RES_ESTADO, @USU_CODIGO, @HAB_CODIGO, 5000) ",
                         connection);
 
                     sqlCommand.Parameters.AddWithValue("@RES_FECHA", reserva.RES_FECHA);

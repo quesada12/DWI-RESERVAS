@@ -23,22 +23,38 @@
         <tr>
             <td class="auto-style1">Fecha Ingreso:</td> 
             <td colspan="2">
-                <asp:Calendar ID="txtCalendario" runat="server" Height="142px" Width="369px"></asp:Calendar>
+                <asp:Calendar ID="txtCalendarioIngreso" runat="server" Height="142px" Width="231px"></asp:Calendar>
                </td>
         </tr>
         <tr>
-            <td class="auto-style1">Tipo:</td> 
+            <td class="auto-style1">Fecha Salida:</td> 
             <td colspan="2">
-                <asp:DropDownList ID="ddlEstado" runat="server" CssClass="btn btn-primary dropdown-toggle" Width="351px">
-                    <asp:ListItem Value="jj">Seleccione Tipo</asp:ListItem>
-                    <asp:ListItem Value="S">Simple</asp:ListItem>
-                    <asp:ListItem Value="D">Doble</asp:ListItem>
-                    <asp:ListItem Value="T">Triple</asp:ListItem>
+                <asp:Calendar ID="txtCalendarioSalida" runat="server" Height="142px" Width="271px"></asp:Calendar>
+               </td>
+        </tr>
+ 
+        <tr>
+            <td class="auto-style1">Hotel:</td> 
+            <td colspan="2">
+             <asp:DropDownList ID="ddlHotel" runat="server" CssClass="btn btn-primary dropdown-toggle" Width="351px" OnSelectedIndexChanged="ddlHotel_SelectedIndexChanged" AutoPostBack="True">
+           
                 </asp:DropDownList>
                 <br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ddlEstado" CssClass="text-danger" ErrorMessage="El campo de tipo es obligatorio."></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="ddlHotel" CssClass="text-danger" ErrorMessage="El campo de hotel es obligatorio."></asp:RequiredFieldValidator>
+
             </td>
         </tr>
+        <tr>
+            <td class="auto-style1">Habitacion:</td> 
+            <td colspan="2">
+                <asp:DropDownList ID="ddlHabitacion" runat="server" CssClass="btn btn-primary dropdown-toggle" Width="351px">
+                 
+                </asp:DropDownList>
+                <br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="ddlHabitacion" CssClass="text-danger" ErrorMessage="El campo de tipo es obligatorio."></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+               
          <tr>
             <td class="auto-style1">Precio:</td> 
             <td colspan="2">
@@ -48,22 +64,11 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style1">Hotel:</td> 
-            <td colspan="2">
-             <asp:DropDownList ID="ddlHotel" runat="server" CssClass="btn btn-primary dropdown-toggle" Width="351px">
-           
-                </asp:DropDownList>
-                <br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="ddlHotel" CssClass="text-danger" ErrorMessage="El campo de hotel es obligatorio."></asp:RequiredFieldValidator>
-
-            </td>
-        </tr>
-        <tr>
             <td class="auto-style1">
                 &nbsp;</td>
             <td>
-                <asp:Button ID="btnCrear" runat="server" Text="Crear" CssClass=" btn btn-success btn-user btn-icon-split boton"   />
-                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger btn-user btn-icon-split boton"  />
+                <asp:Button ID="btnCrear" runat="server" Text="Crear" CssClass=" btn btn-success btn-user btn-icon-split boton" OnClick="btnCrear_Click"   />
+                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-danger btn-user btn-icon-split boton" OnClick="btnCancelar_Click"  />
             </td>
             <td>
                 &nbsp;</td>
